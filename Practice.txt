@@ -1,0 +1,71 @@
+DP:
+Rod Cutting
+Matrix Chain Multiplication
+Longest Common Subsequence
+Longest Increasing Subsequence (NlogN)
+Obtimal Binary Search Trees
+0/1 Knapsack
+Edit Distance
+Coin Change
+
+Greedy:
+Activity Selection
+Fractional Knapsack
+Huffman Codes
+Unit Task Scheduling (Matroids)
+Offline Caching
+Coin Change (denominitions divisible by k)
+
+String Matching:
+Rabin-Karp
+KMP
+
+Graph Theory:
+BFS (Parents, Single Source Shortest Paths)
+DFS (Start Depth, End Depth, Paranthesis Theorem)
+Edges
+	Tree-Edge: ordinary edge between two unvisited nodes
+	Forward-Edge: shortcut edge from ancestor node to decendant node
+	Backward-Edge: shortcut edge from decendant node to ancestor node
+	Cross-Edge: non backward and non forward edge between two visited nodes
+Topological Sort (DFS/Ingoing Edges)
+Strongly Connected Components (Coloring Components in an array, 0....n)
+Handshake Lemma: Sum(deg(vertices)) = 2 * E
+MST (KRUSKAL-PRIM)
+
+
+Number Theory:
+((b - a) / c) + test first, count of numbers divisible by c between a,b.
+(((a + c - 1) / c) * c), first number divisible by c starting a.
+Segmented/Sieve of Eratosthenes (prime generation)
+Divisibility by 8 (last 3 digits divisible by 8)
+
+CPP - SETS
+Segmented Trees:
+Range Minimum Query
+Lazy Propagation
+Divide Array into SQRT(N) segments with SQRT(N) elements
+	- sort each segment
+	- binary search each segment for queries
+	- update segments:
+		- if a whole segment is updated, no resort is required
+		- else resort
+
+Recurrence by Matrix Multiplication
+Exponentiation by Squaring
+
+Binary Search/with Duplicates(first/last occurrences) (increasing/decreasing functions)
+Ternary Search (unimodal functions)
+
+ToDo (DP):
+Chapter 15 Problems
+
+ToDo (Greedy):
+Chapter 16 Problems
+Fractional Knapsack
+Interval Graph Coloring
+Weighted Activity Selection
+
+ToDo (Other):
+Horner Rule
+Kadane
