@@ -42,21 +42,7 @@ int mod(int a, int b)
 	return ((a % b) + b) % b;
 }
 
-int a,b,c,h,s1,s2,t;
-
-inline double solve(double theta)
-{
-	return atan((c - (h  / tan(theta))) / (a + b));
-}
-
-inline double cost(double alpha, double theta)
-{
-	double c1 = (a * s1) / cos(alpha);
-	double c2 = (h * s2) / sin(theta);
-	double c3 = (b * s1) / cos(alpha);
-
-	return c1 + c2 + c3;
-}
+int t,a,b,c,h,s1,s2;
 
 inline int readInt () 
 {
@@ -81,25 +67,37 @@ inline int readInt ()
 		return result;
 }
 
+inline bool satisfy(double theta)
+{
+	double sin_alpha = (sin(theta) * s1) / s2;
+	double alpha = asin(sin_alpha);
+	return sin_alpha > 1 || c <= b * tan(alpha) + a * tan(alpha) + h * tan(theta);
+}
+
+inline double cost(double theta)
+{
+	double alpha = asin((sin(theta) * s1) / s2);
+	double c1 = (s1 * a) / cos(alpha);
+	double c2 = (s2 * h) / cos(theta);
+	double c3 = (s1 * b) / cos(alpha);
+	return c1 + c2 + c3;
+}
+
+
 int main()
 {
 	scanf("%d", &t);
 	while(t--)
 	{
-		a = readInt(), b = readInt(), c = readInt(), h = readInt(), s1 = readInt(), s2 = readInt();
-		double l = 0, r = PI, m1 = 0, m2 = 10, alpha1, alpha2;
-		rep(i, 25)
+		scanf("%d %d %d %d %d %d", &a, &b, &c, &h, &s1, &s2);
+		double ub = PI, lb = 0, mid;
+		rep(i, 50)
 		{
-			m1 = l + (r - l) / 3.0;
-			m2 = r - (r - l) / 3.0;
-
-			alpha1 = solve(m1);
-			alpha2 = solve(m2);
-
-			if(cost(alpha1, m1) > cost(alpha2, m2)) l = m1;
-			if(cost(alpha1, m1) <= cost(alpha2, m2)) r = m2;
+			mid = lb + (ub - lb) / 2;
+			if(satisfy(mid)) ub = mid;
+			else lb = mid;
 		} 
-		printf("%.2lf\n", cost(alpha1, m1));
+		printf("%.2lf\n", cost(mid));
 	}
 	return 0;
 }
