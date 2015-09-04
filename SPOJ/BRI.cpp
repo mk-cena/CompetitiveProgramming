@@ -69,18 +69,17 @@ inline int readInt ()
 
 inline bool satisfy(double theta)
 {
-	double sin_alpha = (sin(theta) * s1) / s2;
+	double sin_alpha = (sin(theta) * s2) / s1;
 	double alpha = asin(sin_alpha);
-	return sin_alpha > 1 || c <= b * tan(alpha) + a * tan(alpha) + h * tan(theta);
+	return sin_alpha > 1 || c <= (b * tan(alpha) + a * tan(alpha) + h * tan(theta));
 }
 
 inline double cost(double theta)
 {
-	double alpha = asin((sin(theta) * s1) / s2);
-	double c1 = (s1 * a) / cos(alpha);
-	double c2 = (s2 * h) / cos(theta);
-	double c3 = (s1 * b) / cos(alpha);
-	return c1 + c2 + c3;
+	double alpha = asin((sin(theta) * s2) / s1);
+	return (s1 * a) / cos(alpha) +
+		   (s2 * h) / cos(theta) +
+		   (s1 * b) / cos(alpha);
 }
 
 
@@ -90,8 +89,8 @@ int main()
 	while(t--)
 	{
 		scanf("%d %d %d %d %d %d", &a, &b, &c, &h, &s1, &s2);
-		double ub = PI, lb = 0, mid;
-		rep(i, 50)
+		double ub = PI/2, lb = 0, mid;
+		rep(i, 30)
 		{
 			mid = lb + (ub - lb) / 2;
 			if(satisfy(mid)) ub = mid;
