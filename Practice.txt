@@ -54,8 +54,10 @@ Divide Array into SQRT(N) segments with SQRT(N) elements
 Recurrence by Matrix Multiplication
 Exponentiation by Squaring
 
-Binary Search/with Duplicates(first/last occurrences) (increasing/decreasing functions)
-Ternary Search (unimodal functions)
+Binary Search/with Duplicates(first/last occurrences) (increasing/decreasing functions) (satisfy rules)
+Ternary Search (unimodal functions)/optimizations
+Backtracking
+
 
 ToDo (DP):
 Chapter 15 Problems
