@@ -27,5 +27,7 @@
 *.out
 *.app
 
-#DS_Store
+#MyFiles
 *.DS_Store
+*/.DS_Store
+log.txt
