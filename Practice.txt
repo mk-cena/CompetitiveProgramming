@@ -57,6 +57,7 @@ Exponentiation by Squaring
 Binary Search/with Duplicates(first/last occurrences) (increasing/decreasing functions) (satisfy rules)
 Ternary Search (unimodal functions)/optimizations
 Backtracking
+Kadane
 
 
 ToDo (DP):
@@ -70,4 +71,3 @@ Weighted Activity Selection
 
 ToDo (Other):
 Horner Rule
-Kadane
