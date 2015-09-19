@@ -58,6 +58,7 @@ Binary Search/with Duplicates(first/last occurrences) (increasing/decreasing fun
 Ternary Search (unimodal functions)/optimizations
 Backtracking
 Kadane
+Distance Range
 
 
 ToDo (DP):
