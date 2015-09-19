@@ -12,6 +12,7 @@
 #include <set>
 #include <fstream>
 #include <limits>
+#include <bitset>
 
 using namespace std;
 
