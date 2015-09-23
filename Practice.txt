@@ -59,6 +59,7 @@ Ternary Search (unimodal functions)/optimizations
 Backtracking
 Kadane
 Distance Range
+Two Pointers
 
 
 ToDo (DP):
