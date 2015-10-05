@@ -49,6 +49,35 @@ int gcd(int a, int b)
 	return gcd(b, a % b);
 }
 
+
+int tmp, n, ai, aij;
+multiset<int> g;
+vector<int> a;
+multiset<int>::iterator it;
+
+int main()
+{
+	scanf("%d", &n);
+	rep(i, n * n) scanf("%d", &tmp), g.insert(tmp);
+
+	rep(i, n)
+	{
+		it = --g.end(), ai = *(it), g.erase(it);
+
+		rep(j, a.size())
+		{
+			aij = gcd(ai, a[j]), it = g.find(aij), g.erase(it), it = g.find(aij), g.erase(it);
+		}
+		a.push_back(ai);
+	}
+
+	rep(i, n) printf("%d ", a[i]);
+
+	return 0;
+}
+
+
+/*
 int tmp, n, ai, aij;
 map<int, int> cnts;
 set<int> g;
@@ -66,7 +95,7 @@ int main()
 
 		rep(j, a.size())
 		{
-			aij = gcd(ai, a[j]), cnts[aij] -= 2;
+			aij = gcd(ai, a[j]), cnts[aij] -= 2 ;
 			if(!cnts[aij]) g.erase(aij);
 		}
 		a.push_back(ai);
@@ -76,3 +105,4 @@ int main()
 
 	return 0;
 }
+*/
